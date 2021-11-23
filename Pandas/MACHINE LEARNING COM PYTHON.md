@@ -31,21 +31,27 @@ Instalando o Anaconda, para isso acesse o site do Anaconda, <https://anaconda.or
 <p>Após efetuado o download, vá até a pasta baixada e clique no executável para efetuar a instalação.</P>
 
 ![Download_Anaconda](img/Download_Anaconda-3.png)
+<br>
 ![Download_Anaconda](img/Download_Anaconda-4.png)
 
 <p>Leia e aceite o termo de licença.</P>
 
 ![Download_Anaconda](img/Download_Anaconda-5.png)
+<br>
 ![Download_Anaconda](img/Download_Anaconda-6.png)
+
 ![Download_Anaconda](img/Download_Anaconda-7.png)
+
 ![Download_Anaconda](img/Download_Anaconda-8.png)
 
 
 
 ![Download_Anaconda](img/Download_Anaconda-9.png)
+
 <p>Aguarde a conclusão do Download.</P>
 
 ![Download_Anaconda](img/Download_Anaconda-10.png)
+
 ![Download_Anaconda](img/Download_Anaconda-11.png)
 <p>Clicque em finish, para finalizar a instalação.</P>
 ![Download_Anaconda](Download_Anaconda-12.png)
@@ -53,7 +59,9 @@ Instalando o Anaconda, para isso acesse o site do Anaconda, <https://anaconda.or
 <p>Veja a quantidade de ferramentas disponíveis do pacote anacondas e ainda contamos com uma série de bibliotecas já embutida.</p>
 
 ![Ferramentas_Anaconda](img/ferramentas-1.png)
+
 ![Ferramentas_Anaconda](img/ferramentas-2.png)
+
 ![Ferramentas_Anaconda](img/ferramentas-3.png)
 <p>A ferramenta que iremos utilizar para executar o nosso código será o Jupyter Notebook
 com Anaconda Navigator aberto basta clicar em Launch no quadro Jupyter notebook, conforme ilustra imagem abaixo:</p>
