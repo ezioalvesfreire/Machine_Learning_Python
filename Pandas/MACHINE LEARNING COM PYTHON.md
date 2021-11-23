@@ -10,7 +10,8 @@ usar bibliotecas como NumPy e Pandas para manipular dados, em conjunto com frame
 ![Dataframe](URL da imagem)
 <p>Neste tutorial utilizarei o Jupyter Notebook como ferramenta para desenvolver e executar os códigos.</p>
 
-<p>Para que você possa esta acompanhando este tutorial e também executando em sua máquina este passo a passo, certifique se de que já tenha o Python instalado em seu computador, para consultar se o Python já está instalado, abra o Prompt de comando CMD do windows, e execute o comando python, com isso deverá aparecer Python e sua versão, no MAC ou Linux acesse o Terminal e ao invés de digitar apenas Python, digite Pytonh3.
+## Guia de instalação
+<p>Para que você possa estar acompanhando este tutorial e também executando em sua máquina este passo a passo, certifique se de que já tenha o Python instalado em seu computador, para consultar se o Python já está instalado, abra o Prompt de comando CMD do windows, e execute o comando **python**, com isso deverá aparecer Python e sua versão, no MAC ou Linux acesse o Terminal e ao invés de digitar apenas Python, digite Pytonh3.
 </p>
 
 <p>caso não tenha o Python instalado, acesse o site oficial do Python, <https://www.python.org/> 
@@ -75,7 +76,29 @@ com Anaconda Navigator aberto basta clicar em Launch no quadro Jupyter notebook,
 <p>Em seguida clique em New, no canto superior direito, e depois clique em Python 3 (ipykemel).</p>
 
 ![Jupyter](img/jupyter-3.png)
+
+## Execução dos códigos
+
 <p>Pronto já podemos iniciar o nosso trabalho com o código.</p>
 
+### Obs: Para execução dos códigos, teremos como base instruções do canal Didática Tech
+### [Site Didática Tech](https://didatica.tech/)
+###  [Didática Tech no YouTube](https://www.youtube.com/watch?v=an54pc9BW4I)
 
 
+-------------------------------------------------------------------------------------------------
+
+### Criando um dataframe a partir de um dicionário python
+<p>nota: dicionário é um conjunto de dados contendo chave e valor, chave sempre a esquerda dos : (dois pontos), e logicamente o valor a direita dos dois pontos, obs: o valor pode receber uma lista, seja strings, inteiros, floats etc.</p>
+Obs2: dicionário está sempre entre chaves{}, lista entre colchetes[] e tuplas entre parênteses().
+</br>
+<p>portanto no exemplo abaixo, temos um dicionário contendo listas</p>
+
+```python
+import pandas as pd
+alunos = {'Nome':['joão', 'Maria', 'Bernardo' 'Paulo' 'Lorena'],
+            'Nota':[5, 7.2, 5.7, 10, 8.9],
+            'Aprovado':['não', 'sim', 'não', 'sim', 'sim']}
+```
+
+dados_df = pd.DataFrame(alunos)
