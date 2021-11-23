@@ -7,11 +7,11 @@ usar bibliotecas como NumPy e Pandas para manipular dados, em conjunto com frame
 <p>O pandas é muito útil para trabalhar com dataframes, (dataframes é basicamente uma tabela que contém linhas e colunas).</p>
 
 
-![Dataframe](URL da imagem)
+![Dataframe](img/alunos_df-1.png)
 <p>Neste tutorial utilizarei o Jupyter Notebook como ferramenta para desenvolver e executar os códigos.</p>
 
 ## Guia de instalação
-<p>Para que você possa estar acompanhando este tutorial e também executando em sua máquina este passo a passo, certifique se de que já tenha o Python instalado em seu computador, para consultar se o Python já está instalado, abra o Prompt de comando CMD do windows, e execute o comando **python**, com isso deverá aparecer Python e sua versão, no MAC ou Linux acesse o Terminal e ao invés de digitar apenas Python, digite Pytonh3.
+<p>Para que você possa estar acompanhando este tutorial e também executando em sua máquina este passo a passo, certifique se de que já tenha o Python instalado em seu computador, para consultar se o Python já está instalado, abra o Prompt de comando CMD do windows, e execute o comando python, com isso deverá aparecer Python e sua versão, no MAC ou Linux acesse o Terminal e ao invés de digitar apenas Python, digite Pytonh3.
 </p>
 
 <p>caso não tenha o Python instalado, acesse o site oficial do Python, <https://www.python.org/> 
@@ -77,13 +77,19 @@ com Anaconda Navigator aberto basta clicar em Launch no quadro Jupyter notebook,
 
 ![Jupyter](img/jupyter-3.png)
 
+<p>para execução dos nossos código será necessario a instalação da biblioteca Pandas, portanto abra o prompt de comando CMD ou equivalente e execute o comando >>> pip install pandas</p>
+
+![Jupyter](img/install_pandas.png)
+
+
+
 ## Execução dos códigos
 
 <p>Pronto já podemos iniciar o nosso trabalho com o código.</p>
 
 ### Obs: Para execução dos códigos, teremos como base instruções do canal Didática Tech
-### [Site Didática Tech](https://didatica.tech/)
-###  [Didática Tech no YouTube](https://www.youtube.com/watch?v=an54pc9BW4I)
+### Acesse o site: [Didática Tech](https://didatica.tech/)
+### Canal [Didática Tech no YouTube](https://www.youtube.com/watch?v=an54pc9BW4I)
 
 
 -------------------------------------------------------------------------------------------------
@@ -92,13 +98,40 @@ com Anaconda Navigator aberto basta clicar em Launch no quadro Jupyter notebook,
 <p>nota: dicionário é um conjunto de dados contendo chave e valor, chave sempre a esquerda dos : (dois pontos), e logicamente o valor a direita dos dois pontos, obs: o valor pode receber uma lista, seja strings, inteiros, floats etc.</p>
 Obs2: dicionário está sempre entre chaves{}, lista entre colchetes[] e tuplas entre parênteses().
 </br>
-<p>portanto no exemplo abaixo, temos um dicionário contendo listas</p>
 
 ```python
-import pandas as pd
-alunos = {'Nome':['joão', 'Maria', 'Bernardo' 'Paulo' 'Lorena'],
+import pandas as pd  #importação da biblioteca Pandas do Python
+```
+
+```python
+
+alunos = {'Nome':['joão', 'Maria', 'Bernardo', 'Paulo', 'Lorena'],    # Dicionário alunos
             'Nota':[5, 7.2, 5.7, 10, 8.9],
             'Aprovado':['não', 'sim', 'não', 'sim', 'sim']}
 ```
+```python
+print(alunos) #imprima o dicionário alunos, para verificar como ficou
 
-dados_df = pd.DataFrame(alunos)
+```
+```python
+{'Nome': ['joão', 'Maria', 'Bernardo', 'Paulo', 'Lorena'], 'Nota': [5, 7.2, 5.7, 10, 8.9], 'Aprovado':   ['não', 'sim', 'não', 'sim', 'sim']} # resultado da impressão
+
+```
+
+```python
+alunos_df = pd.DataFrame(alunos)  # criação de um DataFrame a partir do dicionário alunos sendo atribuiído a variável alunos_df
+```
+```python
+print(alunos_df)
+```
+```python
+       Nome  Nota Aprovado
+0      joão   5.0      não
+1     Maria   7.2      sim
+2  Bernardo   5.7      não
+3     Paulo  10.0      sim
+4    Lorena   8.9      sim
+```
+
+
+## Efetivamente trabalhando com Machine Learning
