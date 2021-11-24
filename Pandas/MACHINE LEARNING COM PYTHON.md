@@ -5,6 +5,7 @@
 usar bibliotecas como NumPy e Pandas para manipular dados, em conjunto com frameworks como TensorFlow/Keras/PyTorch.</p>
 
 <p>O pandas é muito útil para trabalhar com dataframes, (dataframes é basicamente uma tabela que contém linhas e colunas).</p>
+<p>Na figura abaixo temos um exemplo de Dataframe, a área destacada em vermelho é o indice criado automaticamente pela função DataFrame do Pandas Python .</p>
 
 
 ![Dataframe](img/alunos_df-1.png)
@@ -83,7 +84,8 @@ com Anaconda Navigator aberto basta clicar em Launch no quadro Jupyter notebook,
 
 
 
-## Execução dos códigos
+# Tratamento de Dados no Python
+## Introdução ao Pandas
 
 <p>Pronto já podemos iniciar o nosso trabalho com o código.</p>
 
@@ -94,13 +96,13 @@ com Anaconda Navigator aberto basta clicar em Launch no quadro Jupyter notebook,
 
 -------------------------------------------------------------------------------------------------
 
-### Criando um dataframe a partir de um dicionário python
+### Criando um dicionário python
 <p>nota: dicionário é um conjunto de dados contendo chave e valor, chave sempre a esquerda dos : (dois pontos), e logicamente o valor a direita dos dois pontos, obs: o valor pode receber uma lista, seja strings, inteiros, floats etc.</p>
 Obs2: dicionário está sempre entre chaves{}, lista entre colchetes[] e tuplas entre parênteses().
 </br>
 
 ```python
-import pandas as pd  #importação da biblioteca Pandas do Python
+import pandas as pd  #importação da biblioteca Pandas do Python, em: "as pd" estou apelidando pandas como "pd". 
 ```
 
 ```python
@@ -110,20 +112,23 @@ alunos = {'Nome':['joão', 'Maria', 'Bernardo', 'Paulo', 'Lorena'],    # Dicion�
             'Aprovado':['não', 'sim', 'não', 'sim', 'sim']}
 ```
 ```python
-print(alunos) #imprima o dicionário alunos, para verificar como ficou
+print(alunos) #para imprimir o dicionário alunos, para verificar como ficou
 
 ```
-```python
-{'Nome': ['joão', 'Maria', 'Bernardo', 'Paulo', 'Lorena'], 'Nota': [5, 7.2, 5.7, 10, 8.9], 'Aprovado':   ['não', 'sim', 'não', 'sim', 'sim']} # resultado da impressão
+<p>Clique em "Rum" e veja a saída conforme ilustra a figura abaixo:</p>
 
-```
+![Print(alunos)](img/print_alunos.png)
+
+### Criando um dataframe a partir de um dicionário python
 
 ```python
 alunos_df = pd.DataFrame(alunos)  # criação de um DataFrame a partir do dicionário alunos sendo atribuiído a variável alunos_df
 ```
 ```python
-print(alunos_df)
+print(alunos_df) #print para imprimir o DataFrame alunos_df
 ```
+<p>Clique em Rum novamente para executar o código e veja o resultado da saída conforme ilustra abaixo</p>
+
 ```python
        Nome  Nota Aprovado
 0      joão   5.0      não
@@ -133,5 +138,21 @@ print(alunos_df)
 4    Lorena   8.9      sim
 ```
 
+### Criando um objeto Series a partir de um dicionário python
+
+```python
+obj = pd.Series([3, 9, 6,4, 7, 0])
+
+```
+```python
+print(obj) #peço para imprimir o objeto criado
+
+```
+<p>Note que foi impresso os dados destacado em azul, dados "lista" passado entre colchetes e a área destacada em vermelho, foram os índices criados automaticamente pelo comando series, note também que ele informou o tipo de dado, sendo int e o tamanho 64 bit</p>
+
+![Print(obj)](img/print_obj.png)
+
+<p>Obs: o objeto do tipo series é capaz de armazenar apenas um vetor unidimensional, isso é útil para quando estamos querendo trabalhar com apenas uma coluna de dados de uma planilha.</P>
+<p>Obs2: O objeto series aceita quase todos os comados Pandas utilizado no DataFrame.</p>
 
 ## Efetivamente trabalhando com Machine Learning
