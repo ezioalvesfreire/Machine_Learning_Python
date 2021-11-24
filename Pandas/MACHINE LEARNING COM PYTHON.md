@@ -119,7 +119,7 @@ print(alunos) #para imprimir o dicionário alunos, para verificar como ficou
 
 ![Print(alunos)](img/print_alunos.png)
 
-### Criando um dataframe a partir de um dicionário python
+### Criando um DataFrame a partir de um dicionário python
 
 ```python
 alunos_df = pd.DataFrame(alunos)  # criação de um DataFrame a partir do dicionário alunos sendo atribuiído a variável alunos_df
@@ -154,5 +154,79 @@ print(obj) #peço para imprimir o objeto criado
 
 <p>Obs: o objeto do tipo series é capaz de armazenar apenas um vetor unidimensional, isso é útil para quando estamos querendo trabalhar com apenas uma coluna de dados de uma planilha.</P>
 <p>Obs2: O objeto series aceita quase todos os comados Pandas utilizado no DataFrame.</p>
+
+### Comando "head" do Pandas
+```python
+alunos_df.head()
+
+```
+<p>O comando "head" serve para imprimir as primeiras linhas de um DataFrame, note que fica parecido com o comando "print", mas com algumas diferenças, tipo, fica em negrito o cabeçalho da tabela, gera um sombreado alternado entre as linhas, e quando "passa o mouse" sobre a tabela, a linha que se encontra a seta do mouse muda de cor .</p>
+
+### Comando "shape" do Pandas
+```python
+alunos_df.shape
+
+```
+```python
+(5, 3)    # resultado do comando shape, informando quantas linhas quantas colunas possui o DataFrame alunos_df, sendo 5 linhas e 3 colunas.
+
+```
+### Comando para função "describe" do Pandas
+
+```python
+alunos_df.describe()
+
+```
+
+```python
+Nota
+count	5.000000  # Aqui o describe informa quantos dados possui com base no número de linhas
+mean	7.360000  # Valor da média
+std	2.103093  # Desvio padrão
+min	5.000000  # Valor mínimo
+25%	5.700000  # Percentil 25
+50%	7.200000  # Percentil 50
+75%	8.900000  # Percentil 75
+max	10.000000 # Valor máximo
+```
+## Filtrando dados em um DataFrame
+
+### Filtrando colunas em um DataFrame
+<p>Para filtrar uma coluna, basta passar o nome da coluna entre aspas dentro dos colchetes no Dataframe, conforme ilustração abaixo</p>
+
+```python
+alunos_df['Aprovado'] # filtrar apenas a coluna Aprovados
+```
+```python
+0    não
+1    sim
+2    não
+3    sim
+4    sim
+Name: Aprovado, dtype: object
+```
+### Filtrando linhas em um DataFrame, comando "loc"
+
+```python
+alunos_df.loc[[0]]  # entre colchetes informo o índice  que quero filtrar
+```
+```python
+
+Nome	Nota	Aprovado
+0	joão	5.0	não    # resultado para índice zero.
+```
+
+```python
+alunos_df.loc[1:4] # é possivel especificar a faixa em que quero filtrar, nesse exemplo do índice 1 ao índice 4
+```
+
+```python
+
+    Nome	  Nota  	  Aprovado
+1	Maria     7.2	       sim
+2	Bernardo  5.7          não
+3	Paulo	  10.0	       sim
+4	Lorena    8.9	       sim
+```
 
 ## Efetivamente trabalhando com Machine Learning
