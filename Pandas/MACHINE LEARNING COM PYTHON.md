@@ -4,7 +4,7 @@
 * Kaleb Zimmermann
 * Pedro Medeiros
 
-# MACHINE LEARNING COM PYTHON FAZENDO USO DA BIBLIOTECA PANDAS
+# EXPLORANDO A BIBLIOTECA PANDAS
 
 <p>A principal tarefa para engenheiros quando desejam trabalhar com Machine Learning e realizar análise de dados para determinar a viabilidade de encontrar tendências, e então criar um "pipeline" efieciete para treinar o modelo. Este processo envolve
 usar bibliotecas como NumPy e Pandas para manipular dados, em conjunto com frameworks como TensorFlow/Keras/PyTorch.</p>
@@ -266,5 +266,55 @@ print(alunos_df2)
 1     Maria   7.2      sim 
 2  Bernardo   5.7      não
 ```
-<p>Dica importante! usando essa tecnica de copiar os dados de uma DataFrame para outro, você pode manipular seus dados sem medo de cometer qualquer erro, por exemplo excluindo algum dado sem querer, já que com isso você terá o backup em seu DataFrame principal.</p>
+<p>Dica importante! usando essa técnica de copiar os dados de um DataFrame para outro, você pode manipular seus dados sem medo de cometer qualquer erro, por exemplo excluindo algum dado sem querer, já que com isso você terá o backup em seu DataFrame principal.</p>
+
+## Construindo um DataFrame a partir de outro DataFrame utilizando condição.
+<p>Filtro para 6 como nota de corte.</p> 
+
+```python
+aprovados_df = alunos_df.loc[alunos_df['Nota'] >= 6]
+```
+<p>Com isso é possível filtrar e armazenar dentro de outro DataFrame, apenas os alunos de uma turma que tiveram nota maior ou igual a 6.</p>
+
+<p>Obs: poderia utilizar qualquer operador lógico conforme necessidade para filtrar, Ex: igual ==, diferente !=, maior >, menor <, menor ou igual <=.</p>
+
+```python
+print(aprovados_df)  
+```
+```python
+     Nome  Nota Aprovado
+1   Maria   7.2      sim
+3   Paulo  10.0      sim
+4  Lorena   8.9      sim
+```
+## Manipulando arquivo externo atavés do comando "read"
+<p>Fazendo uso da biblioteca Pandas do Python é possível manipular documentos externos, documentos esses que, sua estrutura esteja organizados em forma de linhas e colunas, como por exemplo uma planilha Excel, ou um arquivo com extensão .csv etc. </p>
+
+<p>Para isso faremos um teste utilizando um arquivo pronto baixado do keggle</p>
+
+<p>Para isso crie uma conta no site do Kaggle clicando no link a seguir</p>
+
+[Acesso ao site: kaggle.com](https://www.kaggle.com).
+
+#### Baixe o arquivo athlete_events.csv que iremos manipular [Link Download do arquivo](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results).
+
+<p>Nesta planilha estão os dados de todos os atletas que participaram das olimpiadas desde as olimpiadas de 1896 até as olimpiadas de 2016 no Rio de Janeiro.</p>
+
+
+<p>Nota: Keggle é uma comunidade de aprendizado de Machine Learning and Data Science (aprendizado de máquina e ciência de dados)</p>
+
+<p>Neste exemplo pegamos o arquivo baixado e armazenaremos em uma variável chamada teste.</p>
+
+```python
+import pandas as pd
+teste = pd.read_csv('C:/Users/PC-Home/Downloads/athlete_events.csv')
+```
+<p>Obs: para que funcione descompacte o arquivo baixado e ao informar o caminho inverta as barras do caminho do arquivo .</p>
+<p>Por que "_csv" logo após pd.read? R= porque csv é a extenção do arquivo, se fosse um arquivo Excel deveria ser passado logo após o pd.read  "_xlsx", não esquecendo de preceder com underscore</p>
+
+<p>Feito isso eu posso por exemplo, pedir para imprimir as 7 primeiras linhas do arquivo, fazendo uso do comando head e passando a quantidade de linhas desejadas ente parenteses "chamada para o metodo" da função head. </p>
+
+![Print(obj)](img/impressaoAE.png)
+
+
 ## Efetivamente trabalhando com Machine Learning
