@@ -1,3 +1,8 @@
+# Atividade em equipe:
+* Ézio Alves
+* Douglas Barbosa
+* Kaleb Zimmermann
+* Pedro Medeiros
 
 # MACHINE LEARNING COM PYTHON FAZENDO USO DA BIBLIOTECA PANDAS
 
@@ -217,16 +222,49 @@ Nome	Nota	Aprovado
 ```
 
 ```python
-alunos_df.loc[1:4] # é possivel especificar a faixa em que quero filtrar, nesse exemplo do índice 1 ao índice 4
+alunos_df.loc[1:3] # é possivel especificar a faixa em que quero filtrar, nesse exemplo do índice 1 ao índice 3
 ```
 
 ```python
 
-    Nome	  Nota  	  Aprovado
+    Nome	  Nota      Aprovado
 1	Maria     7.2	       sim
 2	Bernardo  5.7          não
 3	Paulo	  10.0	       sim
-4	Lorena    8.9	       sim
 ```
 
+### com o comando "loc" podemos fazer filtros mais específicos
+<p>No exemplo a seguir iremos filtrar "buscar", em nosso DataFrame todos dados em que aprovado seja "sim" </p>
+
+```python
+alunos_df.loc[alunos_df['Aprovado']== 'sim']
+```
+```python
+	Nome	Nota	Aprovado
+1	Maria	7.2 	sim          # impressão dos dados
+3	Paulo	10.0	sim
+4	Lorena	8.9 	sim
+```
+<p>com isso é possível filtrar qualquer dado em um data frame, passando o nome da coluna e o dado que queira pesquisar</p>
+<p>Obs: cuidado sempre com as letras maiúsculas e minúsculas pois se diferenciam, podendo comprometer a busca</p>
+
+# Construindo um DataFrame a partir de outro DataFrame
+
+<p>Com Pandas, podemos construir um DataFrame a partir de outro Dataframe,essa funcionalidade é muito útil quando temos um volume grande de dados e desejamos trabalhar apenas com uma pequena porção desses dados</p>
+
+```python
+alunos_df2 = alunos_df.loc[0:2]
+```
+```python
+print(alunos_df2)
+```
+<p>Note que abaixo todo DataFrame alunos_df2 foi impresso contendo os dados da linha zero até a dois que foi o intervalo solicitado solicitado entre colchetes >>[0:2]. </p>
+
+```python
+       Nome  Nota Aprovado
+0      joão   5.0      não
+1     Maria   7.2      sim 
+2  Bernardo   5.7      não
+```
+<p>Dica importante! usando essa tecnica de copiar os dados de uma DataFrame para outro, você pode manipular seus dados sem medo de cometer qualquer erro, por exemplo excluindo algum dado sem querer, já que com isso você terá o backup em seu DataFrame principal.</p>
 ## Efetivamente trabalhando com Machine Learning
