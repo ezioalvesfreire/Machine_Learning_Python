@@ -310,11 +310,28 @@ import pandas as pd
 teste = pd.read_csv('C:/Users/PC-Home/Downloads/athlete_events.csv')
 ```
 <p>Obs: para que funcione descompacte o arquivo baixado e ao informar o caminho inverta as barras do caminho do arquivo .</p>
-<p>Por que "_csv" logo após pd.read? R= porque csv é a extenção do arquivo, se fosse um arquivo Excel deveria ser passado logo após o pd.read  "_xlsx", não esquecendo de preceder com underscore</p>
+<p>Por que "_csv" logo após pd.read? R= Porque csv é a extensão do arquivo, se fosse um arquivo Excel deveria ser passado logo após o pd.read  "_xlsx", não esquecendo de preceder com underscore.</p>
 
-<p>Feito isso eu posso por exemplo, pedir para imprimir as 7 primeiras linhas do arquivo, fazendo uso do comando head e passando a quantidade de linhas desejadas ente parenteses "chamada para o metodo" da função head. </p>
+<p>Feito isso, podemos por exemplo, pedir para imprimir as 7 primeiras linhas do arquivo, fazendo uso do comando head e passando a quantidade de linhas desejadas entre parênteses "chamada para o método" da função head. </p>
 
 ![Print(obj)](img/impressaoAE.png)
 
+## Através do comando "reaname" podemos renomear as nossas colunas
+<p>Neste exemplo será modificado o nome das colunas que estão em Inglês para Português</p>
+
+```python
+teste.rename(columns={'Name': 'Nome', 'Sex': 'Sexo', 'Age': 'Idade', 'Height': 'Altura', 'Weight': 'Peso', 'Team':'Equipe', 'Games': 'Jogos', 'Year': 'Ano', 'Season': 'Temporada', 'City': 'Cidade', 'Sport': 'Esporte', 'Event': 'Evento', 'Medal': 'Medalha' })
+```
+![Print(obj)](img/rename.png)
+
+## Fuçao do Pandas para fazer contagem
+Fazer contagem com a função "value_conts()" do Pandas
+
+<p>Neste exemplo será feito uma filtragem da coluna desejada, neste caso será "Medalhas" pedindo para contar quantas vezes o mesmo dado se repetem</p>
+
+```python
+ teste['Medal'].value_counts()
+```
+![Print(obj)](img/counts.png)
 
 ## Efetivamente trabalhando com Machine Learning
