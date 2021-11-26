@@ -383,4 +383,21 @@ teste.boxplot(column=['Age','Height','Weiht'])
 ```
 ![Boxplot](img/listaBoxploit.png)
 
-## Efetivamente trabalhando com Machine Learning
+
+## Criando gráficos utilizando a biblioteca matplotlib
+
+<p>criaremos um gráfico que relaciona o Peso e Altura dos atletas masculino do Dataset atletas das olimpiadas</p>  
+
+```python
+import matplotlib.pyplot as plt
+masculinos = teste.loc[teste['Sex'] =='M'] # criando novo Dataset camado masculino contendo apenas os atletas masculino
+altura = masculinos['Height']
+peso = masculinos['Weight']
+
+```
+```python
+plt.scatter(altura, peso)
+plt.show()
+```
+![Realção Peso Altura](img/pesoAltura.png)
+
