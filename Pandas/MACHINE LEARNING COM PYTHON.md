@@ -322,7 +322,7 @@ teste = pd.read_csv('C:/Users/PC-Home/Downloads/athlete_events.csv')
 ```python
 teste.rename(columns={'Name': 'Nome', 'Sex': 'Sexo', 'Age': 'Idade', 'Height': 'Altura', 'Weight': 'Peso', 'Team':'Equipe', 'Games': 'Jogos', 'Year': 'Ano', 'Season': 'Temporada', 'City': 'Cidade', 'Sport': 'Esporte', 'Event': 'Evento', 'Medal': 'Medalha' })
 ```
-![Print(obj)](img/rename.png)
+![rename](img/rename.png)
 
 ## Fuçao do Pandas para fazer contagem
 Fazer contagem com a função "value_conts()" do Pandas
@@ -332,6 +332,39 @@ Fazer contagem com a função "value_conts()" do Pandas
 ```python
  teste['Medal'].value_counts()
 ```
-![Print(obj)](img/counts.png)
+![counts](img/counts.png)
+
+# Excluir uma coluna no DataFrame usando o comando "drop".
+
+<p>Neste exemplo faremos a exclusão da coluna "ID" e da coluna "Season"</p>
+
+```python
+teste.drop('ID', axis = 1, inplace=True)
+teste.drop('Season', axis = 1, inplace=True)
+```
+<p>Obs: "axis" representa o eixo do plano cartesiano, se 1 representa abscissa eixo "x" >> coluna, se 0 representa ordenada o eixo "y" >> linha).<p>
+
+<p>Obs2: inplace=True, diz que deve permanecer no lugar</p>
+<p>Veja abaixo o resultado das saídas, note que após o comando drop, a área destacada em vermelho, não temos mais a coluna "ID" e "Season".</p>
+
+![Drop](img/drop.png)
+
+## Criando histograma com Pandas
+<p>Para fazer a impressão do gráfico será necessário a importação a biblioteca matplotlib.pyplot</p>
+
+```python
+import matplotlib.pyplot as plt # importação da biblioteca
+
+```
+<p>Para criar o histograma, é necessário passar por parâmetro qual coluna que deseja realizar o estudo </p>
+
+```python
+teste.hist(column='Age', bins=10)
+plt.show() # comando para imprimir o gráfico
+
+```
+<p>Obs: "bins", representa o número de barras que o gráfico irá imprimir para representar a variação entre os dados, portanto se colocar um número bem maior no "bins" teremos uma melhor representação das variações, faça também o teste modificando o valor de 10 para 100.</p>
+
+![Bins](img/bins.png)
 
 ## Efetivamente trabalhando com Machine Learning
