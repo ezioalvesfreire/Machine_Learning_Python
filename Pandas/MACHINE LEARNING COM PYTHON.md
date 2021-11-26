@@ -367,4 +367,20 @@ plt.show() # comando para imprimir o gráfico
 
 ![Bins](img/bins.png)
 
+## Box Plot
+<p>O box plot é bastante útil para identificar os Outliers (pontos fora da curva), ou seja os dados que estão acima ou abaixo da curva normal</p>
+
+```python
+import matplotlib.pyplot as plt
+teste.boxplot(column='Age')
+```
+![Boxplot](img/boxplot.png)
+
+<p>É possivel criar varios boxplot em uma única impressão, para isso basta colocar os dados das colunas em que deseja fazer impressão em forma de lista.</p> 
+
+```python
+teste.boxplot(column=['Age','Height','Weiht'])
+```
+![Boxplot](img/listaBoxploit.png)
+
 ## Efetivamente trabalhando com Machine Learning
